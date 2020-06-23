@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>块标签</title>
+</head>
+<body>
+ <!--div：每一个div占满一整行。块级标签
+  span:文本信息在一行展示，行内标签 内联标签
+  -->
+<!--语意标签 为了提高可读性提供了一些标签例如<header> <foot>-->
+
+<!--表格标签：
+            1.table:定义一个表格 属性：width：宽度  border：边框
+            cellpading：定义内容和单元格的距离 cellspacing：定义单元格之间的距离如果为零则变为一条线
+            bgcolor：背景色
+            2.tr:定义行
+            3.td：定义单元格 colspan：合并列  rowspan:合并行
+            4.th:定义表头单元格
+            -->
+
+    <table border="1" width="50%" cellpadding="0" cellspacing="0" >
+        <tr>
+            <th>编号 </th>
+            <th> 成绩</th>
+            <th> 姓名</th>
+        </tr>
+        <tr>
+            <td>1 </td>
+            <td> 500</td>
+            <td> ye</td>
+        </tr>
+
+    </table>
+<hr>
+
+
+ <table border="1" width="50%" cellpadding="0" cellspacing="0" >
+     <caption> 学生信息表  </caption> <!--定义表格标题-->
+     <tr>
+         <th r>编号 </th>
+         <th> 成绩</th>
+         <th> 姓名</th>
+     </tr>
+     <tr>
+         <td>1 </td>
+         <td> 500</td>
+         <td> ye</td>
+     </tr>
+ </table>
+ <hr size="20" color="red">
+
+ <table border="1" width="50%" cellpadding="0" cellspacing="0" >
+     <tr>
+
+         <th rowspan="2">编号 </th>
+         <th> 成绩</th>
+         <th> 姓名</th>
+
+     </tr>
+     <tr>
+
+         <td>400</td>
+         <td>hao</td>
+     </tr>
+     <tr>
+
+         <td>2 </td>
+
+         <td colspan="2"> ye</td>
+
+     </tr>
+
+ </table>
+ <hr>
+
+</body>
+</html>

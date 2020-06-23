@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+    <style>
+       div{
+           margin-top: 10px;
+           margin-left: 31%;
+       }
+        table{
+            height: 200px;
+            width: 520px;
+
+
+        }
+        tr{
+            text-align: center;
+
+
+        }
+        input{
+
+            margin:5px;
+
+        }
+
+        .out{
+            background-color: white;
+        }
+        .over{
+            background-color: pink;
+        }
+
+
+    </style>
+    <script>
+        //删除方法
+        function delTr(obj){
+            var table = obj.parentNode.parentNode.parentNode;
+            var tr = obj.parentNode.parentNode;
+            table.removeChild(tr);
+        }
+
+        /*分析：
+                1.全选：就是获取全部的checkbox
+                        遍历checkbox，设置每一个checkbox的状态为选中 checked属性
+
+
+        * */
+        //在页面加载之后完成绑定事件
+        window.onload = function(){
+        //给全选按钮绑定单击事件
+            document.getElementById("selectAll").onclick = function(){
+               //1.全选
+                //获取checkbox
+                var cbs =   document.getElementsByName("cb");
+                //遍历checkbox
+                for (var i = 0; i < cbs.length; i++) {
+                    //3.设置每一个的checkbox的checked属性值为true
+                    cbs[i].checked = true ;
+                }
+            }
+            //给全不选按钮绑定单击事件
+            document.getElementById("unselect").onclick = function () {
+                //全不选
+                //获取checkbox按钮
+                var cbs = document.getElementsByName("cb");
+                //遍历checkbox
+                for (var i = 0; i < cbs.length; i++) {
+                    //设置checkbox的属性
+                    cbs[i].checked = false ;
+                }
+
+            }
+            //全反选按钮绑定单击事件
+            document.getElementById("selectRev").onclick = function () {
+                //反选
+                //获取checkbox按钮
+                var cbs = document.getElementsByName("cb");
+                //遍历checkbox
+                for (var i = 0; i < cbs.length; i++) {
+                 //设置成每个cb状态相反
+                    cbs[i].checked = !cbs[i].checked;
+                }
+            }
+
+            //第一个单击按钮绑定单击事件
+            document.getElementById("firstCb").onclick = function () {
+                //获取checkbox按钮
+                var cbs = document.getElementsByName("cb");
+                //遍历checkbox
+                for (var i = 0; i < cbs.length; i++) {
+                    cbs[i].checked = this.checked;
+                   /* cbs[i].checked = cbs[0].checked; //可行 */
+                }
+            }
+            //给所有tr绑定移到元素之上和移出元素之上事件
+            var trs =  document.getElementsByTagName("tr");
+             //鼠标到元素之上
+            for (let i = 0; i <trs.length; i++) {
+
+                trs[i].onmouseover = function () {
+                    this.className = "over";
+                }
+                trs[i].onmouseout = function () {
+                    this.className = "out";
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+
+<table id="table" align="center" border="1px" >
+    <caption>学生信息表</caption>
+    <tr>
+        <td><input type="checkbox" name="cb" id="firstCb"></td>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"  name="cb"></td>
+        <td>1</td>
+        <td>小龙女</td>
+        <td>女</td>
+        <td> <a href="javascript:void(0);" onclick="delTr(this)" > 删除</a> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"  name="cb" ></td>
+        <td>2</td>
+        <td>谢霆锋</td>
+        <td>男</td>
+        <td> <a href="javascript:void(0)" onclick="delTr(this)"> 删除</a> </td>
+    </tr>
+
+
+</table>
+<div>
+<input type="button" value="全选" class="input" id="selectAll">
+<input type="button" value="全不选" class="input" id="unselect">
+<input type="button" value="反选" class="input" id="selectRev">
+</div>
+</body>
+</html>

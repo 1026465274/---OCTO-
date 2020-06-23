@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动跳转</title>
+    <style>
+        p{
+            text-align: center ;
+        }
+        span{
+            color: red;
+        }
+
+    </style>
+
+    <script>
+    /*
+        分析：
+            1.显示页面效果 <p>
+            2.秒数的一个变化
+                2.1定义一个方法，获得span标签，修改span标签的内容，时间--
+                2.2定义一个，定时器一秒执行一次该方法
+            3.在方法中判断时间<=0则跳转到首页
+
+
+     */
+
+    </script>
+</head>
+<body>
+    <p>
+        <span id="time">5</span>秒之后跳转页面
+    </p>
+
+    <script>
+    //获得秒数的id
+     second = 5;
+      time =  document.getElementById("time");
+     function showtime() {
+         second--;
+         //如果时间小于等于0则跳转到首页
+         if(second<=0){
+             location.href="https://www.baidu.com";
+         }
+         time.innerHTML= second;
+     }
+        //设置定时器
+     setInterval(showtime,1000);
+
+
+    </script>
+</body>
+</html>

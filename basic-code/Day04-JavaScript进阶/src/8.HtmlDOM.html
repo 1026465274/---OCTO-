@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMLDOM</title>
+
+</head>
+<body>
+<div id="div1">
+    div1
+</div>
+<div id="div2">div2</div>
+
+<script>
+    var div = document.getElementById("div1");
+    //把div里面的内容换成文本输入框
+    /*div1.innerHTML="<input type='text'>";*/
+    //想保留div里面的内容
+    div1.innerHTML+="<input type='text'>";
+    /*
+    HTML DOM
+        1.标签体的设置和获取：innerHTML
+        2.使用html元素对象的属性
+        3.控制样式
+            1.使用元素的style属性来设置
+                如：
+                    //修改样式方式1
+                      div1.style.border = "1px solid red";
+
+                    //font-size-->fontSize
+                     div1.style.fontSize = "20px";
+            2.提前定义好类选择器的样式通过设置class属性来改变样式
+    * */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location</title>
+    <script>
+        /*
+        location:地址栏对象
+            1.创建（获取）
+                1.window.location
+                2.location
+
+            2.方法
+                reload():重新加载当前文档
+
+            3.属性
+                href 设置或者返回完整的URL
+
+
+
+        * */
+    </script>
+</head>
+<body>
+    <input id="123" type="button" value="点一下玩一年">
+
+    <input id="456" type="button" value="点一下">
+
+
+<script>
+    //获取按钮
+     var  btn  = document.getElementById("123");
+     //绑定单击事件
+     btn.onclick = function () {
+         //3.刷新页面
+         location.reload();
+
+     }
+     //获取href
+    var href = location.href;
+     alert(href);
+
+     var a = document.getElementById("456");
+     a.onclick = function () {
+         //
+         location.href = "https://www.baidu.com";
+
+     }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background: url("src/css/time_01.jpg")  no-repeat center;
+        }
+        .out{
+            width: 900px;
+            height: 500px;
+            border: 5px solid #EEEEEE;
+            background: white;
+            /*让div水平居中*/
+            margin: auto;
+            margin-top: 20px;
+
+            padding:15px;
+        }
+        .left{
+           /* border: 1px solid red;*/
+            float: left;
+            margin: 10px;
+        }
+        .left>p:first-child{
+            color: #FFD026;
+            font-size: 20px;
+        }
+        .left>p:last-child{
+            color: #A6A6A6;
+            font-size: 20px;
+
+        }
+        .center{
+          /* border: 1px solid red;*/
+            width: 450px;
+            float:left ;
+        }
+
+        .right{
+           /* border: 1px solid red;*/
+            float: right;
+
+        }
+        .right p {
+            font-size: 16px;
+        }
+        .right p a{
+           /* color: #ffc0cb;*/
+
+        }
+        .td_right{
+            padding-left: 20px;
+
+
+
+
+        }
+        .td_left{
+            width: 100px;
+            height: 45px;
+            text-align: right;
+        }
+        #username,#password,#birthday,#telephonenumber,#email,#name{
+            width: 251px;
+            height: 32px;
+            border: 1px  solid #A6A6A6;
+            /*设置边框圆角*/
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        #yzm {
+            width: 125px;
+            height: 32px;
+            border: 1px solid #A6A6A6;
+            /*设置边框圆角*/
+            border-radius: 5px;
+            padding-left: 10px;
+             }
+
+
+        #btn_submit{
+            width: 150px;
+            height: 40px;
+            background-color: yellow;
+            border: 1px solid yellow;
+        }
+        a:link{
+            color: pink; /*本来颜色*/
+        }
+        a:hover{
+            color: green; /*鼠标悬浮颜色*/
+        }
+        a:active{
+            color: yellow; /*正在访问   点击不松*/
+        }
+        a:visited{
+            color: red; /*访问完成*/
+        }
+        #gender{
+
+        }
+        .error{
+            color: red;
+        }
+
+
+    </style>
+
+    <script>
+            /*分析：
+                  1.给表单绑定onsubmit事件监听器中判断每一个方法的校验结果
+                  如果都为true，则监听器返回都为true
+                  如果有一个返回false，则监听器返回为false
+                  2.定义一些方法分别校验各个表单项
+                  3.给各个表单项绑定onblur事件
+            *
+            * */
+        //等页面加载完成之后
+        window.onload = function () {
+            //1.给表单绑定onsubmit事件监听器中判断每一个方法的校验结果
+            document.getElementById("form").onsubmit = function () {
+            //调用用户名校验方法 checkUsername
+            //调用密码校验方法   checkPassword
+                return checkUsername && checkPassword ;
+
+            }
+            //校验用户名
+            function checkUsername() {
+                //1.获取用户名的值
+             var username = document.getElementById("username").value;
+                //2.定义正则表达式
+
+                var reg_username = /^\w{6,12}$/;  //以单词字符开头以单词字符结尾 6-12位
+                //3.判断值是否符合正则的规则
+                var flag = reg_username.test(username);
+                //4.提示信息
+                var s_username = document.getElementById("s_username");
+                if (flag){
+                //true提示勾
+                    s_username.innerHTML = "√";
+                }
+                else {
+                    //false 提示不符合规范
+                    s_username.innerHTML = "格式错误只允许6-12位单词";
+                }
+                return flag;
+            }
+                //校验密码
+            function checkPassword() {
+                //1.获取用户名的值
+                var password = document.getElementById("password").value;
+                //2.定义正则表达式
+
+                var reg_password = /^w{6,12}$/;  //以单词字符开头以单词字符结尾 6-12位
+                //3.判断值是否符合正则的规则
+                var flag = reg_password.test(password);
+                //4.提示信息
+                var s_password = document.getElementById("s_password");
+                if (flag){
+                    //true提示勾
+                    s_password.innerHTML = "√";
+                }
+                else {
+                    //false 提示不符合规范
+                    s_password.innerHTML = "格式错误只允许6-12位单词";
+                }
+                return flag;
+            }
+
+        }
+    </script>
+</head>
+    <body >
+        <div class="out" center background="wheat">
+            <div class="left">
+                <p >新用户注册</p>
+                <p>USER REGISTER</p>
+
+            </div>
+
+            <div class="center">
+                <div class="from">
+                    <form action="#" method="get" id="form">
+                        <table >
+                            <tr>
+                                <td class="td_left">
+                                    <label for="username"  >用户名</label>
+                                </td>
+                                <td class="td_right"><input id="username" name="username"   placeholder="请输入您要注册的用户名">
+                                    <span id="s_username" class="error">  </span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="td_left">
+                                    <label for="password"  >密码</label>
+
+                                </td>
+                                <td class="td_right"><input id="password"    name="password" placeholder="请输入您的密码" type="password">
+                                    <span id="s_password" class="error">  </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">
+                                    <label for="email"  >Email
+                                </td>
+                                <td  class="td_right"> <input type="email" name="email"  id="email" placeholder="请输入Email"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">
+                                    <label for="name">姓名</label>
+                                </td>
+                                <td class="td_right"><input id="name"  name="name"     placeholder="请输入真实姓名" ></td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">
+                                    <label for="telephonenumber" >手机号</label>
+                                </td>
+                                <td class="td_right"><input id="telephonenumber"    name="phone" placeholder="请输入手机号" type="number"></td>
+                            </tr>
+                            <tr>
+                                <td class="td_left">
+                                    <label for="gender"  >性别</label>
+                                </td>
+                                <td  class="td_right"><input  name="gender" id="gender" value="male" type="radio" checked="checked">男
+                                    <input name="gender"    value="female" type="radio">女
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  class="td_left">
+                                    <label for="birthday"> 出生年月</label>
+                                </td>
+                                <td class="td_right" ><input  name="birthday"     type="date" id="birthday"></td>
+                            </tr>
+                            <tr>
+                                <td  class="td_left">
+                                   <label for="yzm"  >验证码 </label>
+                                </td>
+                                <td class="td_right">
+                                    <textarea rows="1"  id="yzm"  >  </textarea> <input type="image" src="">
+                                </td>
+                            </tr>
+                            <tr align="center" >
+                                <td colspan="2">
+                                    <input type="submit"  id="btn_submit" value="注册">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="right">
+                <p>已有帐号？<a href="#">立即登录</a></p>
+
+
+            </div>
+        </div>
+
+    </body>
+</html>

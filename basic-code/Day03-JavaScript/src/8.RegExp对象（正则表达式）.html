@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script>
+       /*
+      RegExp : 正则表达式对象
+            1.正则表达式：定义字符串的组成规则
+                  1.单个字符:[]
+                       如： [a] [ab](a或者b)[a-zA-z0-9_]
+                       特殊符号:
+                                \d:单个数组字符[0-9]
+                                \w:单个单词字符[a-zA-z0-9_]\
+                   2.量词符号：
+                   ？表示出现0次或者1次
+                   *表示出现0次或者多次
+                   +出现1次或者多次
+                   {m,n}:表示 m<=数量<=n
+                        m如果缺省：{,n}最多n次
+                        n缺省：{m,}最少m次
+                    3.开始结束符号
+                        ^:开始
+                        $:结束
+
+            2. 正则对象
+                1.创建
+                     1.var reg = new RegExp("正则表达式");
+                     2.var reg = /正则表达式/;
+
+
+                 2.方法
+                    1.test():验证指定的字符串是否符合正则定义的规范
+
+       * */
+
+        var reg = /^\w{6,12}$/;
+        username = "zhansan";
+        alert(reg.test(username));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

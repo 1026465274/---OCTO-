@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*Dom的简单学习
+        *       功能：控制html文档的内容
+        *       代码：获取页面标签（元素）对象Element
+        *       document.getElementById（"id值"）:通过元素的id获取元素对象
+        *
+        *       操作Element对象：
+        *           1.修改属性值：
+        *               1.明确获取的对象是哪一个
+        *               2.查看API文档，找其中哪些属性可以设置
+        *           2。修改标签内容：
+        *                   属性：innerHTML
+        *
+        *
+        * 事件简单学习
+        *   功能：某些组件被执行了某些操作后，触发某些代码的执行
+        *
+        *   如何去绑定事件：
+        *       1.直接在html标签上，指定事件的属性，属性值就是js代码
+        *           1.事件：onclick--单击事件
+        *       2.通过js获取元素对象，指定事件的属性，设置一个函数
+        *
+        *        */
+
+
+
+
+    </script>
+
+</head>
+<body>
+<h1 id="title">悔创阿里杰克马</h1>
+    <img  id="cement" src="照相机.jpg">
+<!--1种事件方式-->
+<img id="light" src="../企鹅.jpg" onclick="fun();">
+
+<!--第2种触发事件的方式-->
+<img id="123" src="照相机.jpg">
+
+
+<script>
+   /* //通过id获取元素对象
+    var cement = document.getElementById("cement");
+    alert("换图片");
+    cement.src="../企鹅.jpg";*/
+
+    var title = document.getElementById("title");
+    alert("换内容");
+    //修改内容
+    title.innerHTML = "不识妻美刘强东";
+
+   function fun() {
+       alert("我被点亮");
+   }
+
+   //第2种触发方式
+   function fun2() {
+    alert("咋的？");
+   }
+   //获取对象
+   var a =document.getElementById("123");
+  //绑定事件
+    a.onclick = fun2;
+
+
+
+</script>
+</body>
+</html>

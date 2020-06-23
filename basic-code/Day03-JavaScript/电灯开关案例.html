@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关</title>
+    <script>
+        /*
+        *分析：1.获取图片对象
+        *      2.绑定单击事件
+        *       3.每次单击切换图片
+        *           使用flag标记
+        *
+        * */
+    </script>
+</head>
+<body>
+<img src="企鹅.jpg" id="off">
+
+
+
+<script>
+    //获取图片对象
+    var light =  document.getElementById("off");
+    //用flag标记
+    var flag = false;
+    //绑定单击事件
+    light.onclick = function () {
+        //判断灯是亮的还是灭的
+        if (flag){//如果灯是开的则灭掉
+            light.src = "../照相机.jpg";
+            flag =false;
+        }else{
+            light.src = "企鹅.jpg";
+            flag = true;
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

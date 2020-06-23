@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <script></script>
+</head>
+<body>
+    <img id="tim" src="src/timg_1.jpg" width="100%">
+    <input type="button" id="t" value="后退">
+    <script>
+        /*
+        轮播图实现案例分析
+        1.在页面上使用img标签展示图片
+        2.定义一个方法来去修改src的属性
+        3.定义一个定时器，每隔3秒改变一下
+
+        * */
+        //修改图片src属性
+         var number = 1;
+        function fun() {
+            number++;
+            if(number>3){
+                number=1;
+            }
+          var img =  document.getElementById("tim");
+          img.src = "src/timg_"+number+".jpg";
+
+        }
+        setInterval(fun,3000);
+
+        //1.获取按钮
+        var btn3 = document.getElementById("t");
+        //2.绑定单击事件
+        btn3.onclick = function () {
+            history.back();
+        }
+    </script>
+</body>
+</html>

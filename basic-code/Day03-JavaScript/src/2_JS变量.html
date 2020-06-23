@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量</title>
+    <script>
+
+        //定义number类型
+        var num = 1;
+        var num2 = 1.2;
+        var num3 = NaN;
+        //输出到页面上
+        document.write(num+"<br>");
+        document.write(num2+"<br>");
+        document.write(num3+"<br>");
+        //通过typeof来获取变量数据类型
+        document.write(num+"--->"+typeof(num)+"<br>");
+
+        /*运算符
+        *   注意：在JS中，如果运算符不是运算符所要求的类型那么JS引擎会自动将运算数进行类型转换
+        * 其它类型转number
+        *       String类型转number：按照字面值转换。如果字面值不是数字，则转为NAN（不是数字的数字）
+        *        boolean true 转为1，false转为0
+        *
+        *
+        *   比较运算符：
+        *           比较方式：
+        *                   1.类型相同：直接比较
+        *                       ①字符串：按照字典顺序进行比较，按位逐一比较，直到比出大小为止
+        *                   2.类型不同：先进行类型转换，再比较
+        *                       ===：全等于，在比较之前先判断类型，如果类型不一样，则直接返回false
+        *
+        *   逻辑运算符：
+        *       ！：非
+        *              其它类型转boolean
+        *               1.number：0或NAN为假， 其它为真
+        *               2.String：除了空字符串（“ ”）其它都是true
+        *               3.null&undefined:都是false
+        *               4.对象：都为true
+        *       三元运算符：
+        *            ?:
+        *
+        *
+        * 特殊语法
+        *       1.语句以;结尾，如果一行只有一行语句 ;可以省略
+        *       2.变量的定义使用var关键字，也可以不使用
+        *               用：定义的变量是局部变量
+        *               不用：定义的变量是全局变量
+        *
+        *
+        *
+        * */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
